@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: 'ar'
+
+collections:
+  - name: "projects"
+    label: "المشاريع"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الوصف", name: "description", widget: "text"}
+      - {label: "الصورة", name: "image", widget: "image", required: false}
+      - {label: "التاريخ", name: "date", widget: "datetime"}
+      - {label: "العميل", name: "client", widget: "string", required: false}
+      - {label: "التقنيات المستخدمة", name: "technologies", widget: "list", default: []}
+      - {label: "رابط المشروع", name: "project_url", widget: "string", required: false}
+      - {label: "رابط المعاينة", name: "preview_url", widget: "string", required: false}
+      - {label: "الفئة", name: "category", widget: "select", options: ["web", "mobile", "design", "ecommerce"]}
+      - {label: "مميز", name: "featured", widget: "boolean", default: false}
+      - {label: "المحتوى", name: "body", widget: "markdown"}
+
+  - name: "services"
+    label: "الخدمات"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الوصف القصير", name: "description", widget: "text"}
+      - {label: "الأيقونة", name: "icon", widget: "string", hint: "اسم الأيقونة من Font Awesome (مثل: fas fa-code)"}
+      - {label: "السعر", name: "price", widget: "string"}
+      - {label: "الميزات", name: "features", widget: "list", default: []}
+      - {label: "مميزة", name: "featured", widget: "boolean", default: false}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+      - {label: "المحتوى التفصيلي", name: "body", widget: "markdown"}
+
+  - name: "products"
+    label: "المنتجات"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "اسم المنتج", name: "title", widget: "string"}
+      - {label: "الوصف", name: "description", widget: "text"}
+      - {label: "صورة المنتج", name: "image", widget: "image", required: false}
+      - {label: "السعر الحالي", name: "current_price", widget: "string"}
+      - {label: "السعر القديم", name: "old_price", widget: "string", required: false}
+      - {label: "الميزات", name: "features", widget: "list", default: []}
+      - {label: "التقنيات", name: "technologies", widget: "list", default: []}
+      - {label: "رابط المعاينة", name: "preview_url", widget: "string", required: false}
+      - {label: "رابط الشراء", name: "purchase_url", widget: "string", required: false}
+      - {label: "شارة المنتج", name: "badge", widget: "select", options: ["جديد", "الأكثر مبيعاً", ""], required: false}
+      - {label: "متوفر", name: "available", widget: "boolean", default: true}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+      - {label: "المحتوى التفصيلي", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "الإعدادات"
+    files:
+      - label: "معلومات الموقع"
+        name: "site_info"
+        file: "content/settings/site_info.yml"
+        fields:
+          - {label: "اسم الموقع", name: "site_name", widget: "string"}
+          - {label: "الوصف", name: "site_description", widget: "text"}
+          - {label: "الاسم الشخصي", name: "personal_name", widget: "string"}
+          - {label: "المسمى الوظيفي", name: "job_title", widget: "string"}
+          - {label: "الصورة الشخصية", name: "profile_image", widget: "image", required: false, hint: "الصورة ستظهر في الصفحة الرئيسية وصفحة السيرة الذاتية"}
+          - {label: "البريد الإلكتروني", name: "email", widget: "string"}
+          - {label: "رقم الهاتف", name: "phone", widget: "string"}
+          - {label: "العنوان", name: "address", widget: "text"}
+          - {label: "روابط التواصل الاجتماعي", name: "social_links", widget: "object", fields: [
+              {label: "فيسبوك", name: "facebook", widget: "string", required: false},
+              {label: "تويتر", name: "twitter", widget: "string", required: false},
+              {label: "لينكد إن", name: "linkedin", widget: "string", required: false},
+              {label: "جيت هاب", name: "github", widget: "string", required: false},
+              {label: "إنستغرام", name: "instagram", widget: "string", required: false}
+            ]}
+
+      - label: "صفحة من أنا"
+        name: "about_page"
+        file: "content/settings/about.yml"
+        fields:
+          - {label: "العنوان الرئيسي", name: "main_title", widget: "string"}
+          - {label: "العنوان الفرعي", name: "subtitle", widget: "string"}
+          - {label: "النص التعريفي", name: "intro_text", widget: "markdown"}
+          - {label: "المعلومات الشخصية", name: "personal_info", widget: "object", fields: [
+              {label: "العمر", name: "age", widget: "string"},
+              {label: "الموقع", name: "location", widget: "string"},
+              {label: "سنوات الخبرة", name: "experience_years", widget: "string"}
+            ]}
+          - {label: "المهارات", name: "skills", widget: "list", fields: [
+              {label: "اسم المهارة", name: "name", widget: "string"},
+              {label: "النسبة المئوية", name: "percentage", widget: "number", min: 0, max: 100},
+              {label: "الفئة", name: "category", widget: "string"}
+            ]}
+
+      - label: "الصفحة الرئيسية"
+        name: "home_page"
+        file: "content/settings/home.yml"
+        fields:
+          - {label: "عنوان الهيرو", name: "hero_title", widget: "string"}
+          - {label: "العنوان الفرعي", name: "hero_subtitle", widget: "string"}
+          - {label: "وصف الهيرو", name: "hero_description", widget: "text"}
+          - {label: "نص زر الأعمال", name: "projects_button_text", widget: "string"}
+          - {label: "نص زر التواصل", name: "contact_button_text", widget: "string"}
+          - {label: "الإحصائيات", name: "stats", widget: "list", fields: [
+              {label: "الرقم", name: "number", widget: "string"},
+              {label: "التسمية", name: "label", widget: "string"}
+            ]}

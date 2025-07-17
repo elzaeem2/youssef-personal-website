@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأعمال والمشاريع - موقعي الشخصي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>موقعي الشخصي</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">السيرة الذاتية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link active">الأعمال والمشاريع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">الخدمات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">تواصل</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">الأعمال والمشاريع</h1>
+            <p class="page-subtitle">استعرض مجموعة من أفضل أعمالي ومشاريعي المكتملة</p>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">جميع المشاريع</button>
+                <button class="filter-btn" data-filter="web">مواقع ويب</button>
+                <button class="filter-btn" data-filter="mobile">تطبيقات موبايل</button>
+                <button class="filter-btn" data-filter="design">تصميم</button>
+                <button class="filter-btn" data-filter="ecommerce">متاجر إلكترونية</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web ecommerce">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">متجر إلكتروني متكامل</h3>
+                        <p class="project-description">متجر إلكتروني حديث مع نظام دفع آمن وإدارة المنتجات</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                يناير 2024
+                            </span>
+                            <span class="project-client">
+                                <i class="fas fa-user"></i>
+                                شركة التجارة الذكية
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">تطبيق إدارة المهام</h3>
+                        <p class="project-description">تطبيق موبايل لإدارة المهام اليومية مع واجهة سهلة الاستخدام</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Redux</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                ديسمبر 2023
+                            </span>
+                            <span class="project-client">
+                                <i class="fas fa-user"></i>
+                                مشروع شخصي
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web design">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">موقع شركة تقنية</h3>
+                        <p class="project-description">موقع شركة تقنية بتصميم عصري ومتجاوب مع جميع الأجهزة</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                نوفمبر 2023
+                            </span>
+                            <span class="project-client">
+                                <i class="fas fa-user"></i>
+                                شركة الابتكار التقني
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">لوحة تحكم تحليلية</h3>
+                        <p class="project-description">لوحة تحكم متقدمة لعرض البيانات والإحصائيات بشكل تفاعلي</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                أكتوبر 2023
+                            </span>
+                            <span class="project-client">
+                                <i class="fas fa-user"></i>
+                                شركة البيانات الذكية
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">هوية بصرية متكاملة</h3>
+                        <p class="project-description">تصميم هوية بصرية شاملة تتضمن الشعار والألوان والخطوط</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Illustrator</span>
+                            <span class="tech-tag">Photoshop</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                سبتمبر 2023
+                            </span>
+                            <span class="project-client">
+                                <i class="fas fa-user"></i>
+                                مطعم الأصالة
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="web ecommerce">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">منصة تجارة إلكترونية</h3>
+                        <p class="project-description">منصة شاملة للتجارة الإلكترونية مع نظام إدارة متقدم</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                أغسطس 2023
+                            </span>
+                            <span class="project-client">
+                                <i class="fas fa-user"></i>
+                                مجموعة التسوق الرقمي
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>هل لديك مشروع في ذهنك؟</h2>
+                <p>دعنا نتعاون لتحويل فكرتك إلى واقع رقمي مذهل</p>
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    ابدأ مشروعك الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>موقعي الشخصي</h3>
+                    <p>مطور ويب ومصمم واجهات مستخدم متخصص في إنشاء تجارب رقمية متميزة</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">السيرة الذاتية</a></li>
+                        <li><a href="projects.html">الأعمال</a></li>
+                        <li><a href="services.html">الخدمات</a></li>
+                        <li><a href="contact.html">تواصل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>معلومات التواصل</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> yousef.muhamed.eng22@stu.uoninevah.edu.iq</p>
+                        <p><i class="fas fa-phone"></i> +964 770 123 4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> الموصل، العراق</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 موقعي الشخصي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

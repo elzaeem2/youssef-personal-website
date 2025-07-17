@@ -1,0 +1,51 @@
+main_title: "السيرة الذاتية"
+subtitle: "تعرف على خبراتي ومهاراتي المهنية"
+intro_text: |
+  مرحباً، أنا يوسف محمد، مطور ويب ومصمم واجهات مستخدم بخبرة تزيد عن 3 سنوات في مجال تطوير المواقع والتطبيقات الحديثة. 
+  أتخصص في إنشاء تجارب رقمية متميزة باستخدام أحدث التقنيات والأدوات.
+
+  أؤمن بأن التصميم الجيد والكود النظيف هما أساس أي مشروع ناجح. أسعى دائماً لتقديم حلول مبتكرة تلبي احتياجات العملاء 
+  وتوفر تجربة مستخدم استثنائية.
+
+personal_info:
+  age: "23 سنة"
+  location: "الموصل، العراق"
+  experience_years: "3+ سنوات"
+
+skills:
+  - name: "HTML5 & CSS3"
+    percentage: 95
+    category: "تطوير الواجهات الأمامية"
+  - name: "JavaScript"
+    percentage: 90
+    category: "تطوير الواجهات الأمامية"
+  - name: "React.js"
+    percentage: 85
+    category: "تطوير الواجهات الأمامية"
+  - name: "Vue.js"
+    percentage: 80
+    category: "تطوير الواجهات الأمامية"
+  - name: "Node.js"
+    percentage: 85
+    category: "تطوير الواجهات الخلفية"
+  - name: "PHP"
+    percentage: 80
+    category: "تطوير الواجهات الخلفية"
+  - name: "Python"
+    percentage: 75
+    category: "تطوير الواجهات الخلفية"
+  - name: "MySQL"
+    percentage: 85
+    category: "تطوير الواجهات الخلفية"
+  - name: "Figma"
+    percentage: 90
+    category: "أدوات التصميم"
+  - name: "Adobe XD"
+    percentage: 85
+    category: "أدوات التصميم"
+  - name: "Photoshop"
+    percentage: 80
+    category: "أدوات التصميم"
+  - name: "Illustrator"
+    percentage: 75
+    category: "أدوات التصميم"

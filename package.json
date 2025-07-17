@@ -1,0 +1,34 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "موقع شخصي متكامل وحديث مع Netlify CMS",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=/",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "personal-website",
+    "portfolio",
+    "netlify-cms",
+    "arabic",
+    "responsive",
+    "modern"
+  ],
+  "author": "محمد أحمد",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/personal-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/personal-website/issues"
+  },
+  "homepage": "https://yourwebsite.netlify.app"
+}
