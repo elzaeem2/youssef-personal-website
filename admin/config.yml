@@ -1,11 +1,20 @@
 backend:
   name: git-gateway
   branch: main
+  squash_merges: true
 
 media_folder: "images"
 public_folder: "/images"
 
 locale: 'ar'
+display_url: https://youssef-personal-website.netlify.app
+logo_url: https://youssef-personal-website.netlify.app/images/photo_2025-07-18_00-04-58.jpg
+
+# Editorial workflow for content review
+publish_mode: editorial_workflow
+
+# Enable drafts
+show_preview_links: true
 
 collections:
   - name: "projects"
