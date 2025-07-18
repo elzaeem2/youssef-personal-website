@@ -10,10 +10,10 @@ locale: 'ar'
 display_url: https://youssef-personal-website.netlify.app
 logo_url: https://youssef-personal-website.netlify.app/images/photo_2025-07-18_00-04-58.jpg
 
-# Editorial workflow for content review
-publish_mode: editorial_workflow
+# Simple publish mode for immediate updates
+# publish_mode: editorial_workflow  # Disabled to allow immediate publishing
 
-# Enable drafts
+# Enable drafts and preview
 show_preview_links: true
 
 collections:
