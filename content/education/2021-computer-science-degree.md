@@ -4,7 +4,7 @@ degree: طالب
 field_of_study: هندسة اتصالات
 start_year: "2022"
 end_year: الان
-gpa: 3.8/4.0
+gpa: ""
 location: الموصل، العراق
 description: "تخصص في البرمجة في هندسة الاتصالات "
 activities:
