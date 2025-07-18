@@ -1,12 +1,12 @@
 ---
 institution: جامعة الموصل
 degree: طالب جامعي
-field_of_study: علوم الحاسوب
-start_year: "2018"
-end_year: "2022"
-gpa: 3.8/4.0
+field_of_study: كلية هندسة الكترونيات
+start_year: "2022"
+end_year: الان
+gpa: ""
 location: الموصل، العراق
-description: تخصص في علوم الحاسوب مع التركيز على تطوير البرمجيات وهندسة الويب
+description: تخصص هندسة اتصالات ,برمجة
 activities:
   - عضو في نادي البرمجة الجامعي
   - مشارك في مسابقة البرمجة السنوية
