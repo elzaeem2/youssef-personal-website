@@ -94,15 +94,15 @@ async function runSveltiaCMSTest() {
     // Test config file
     const configResult = await testEndpoint('https://youssef-personal-website.netlify.app/admin/config.yml', 'Config File');
     
-    // Test Sveltia CMS CDN
+    // Test Sveltia CMS CDN (302 redirects are normal for CDN)
     const sveltiaCDNResult = await testEndpoint('https://unpkg.com/@sveltia/cms@latest/dist/sveltia-cms.js', 'Sveltia CMS CDN');
+    const cdnWorking = sveltiaCDNResult.success || sveltiaCDNResult.statusCode === 302;
     
     console.log('\n📊 Test Results:');
     console.log('================');
     
     const coreWorking = siteResult.success && adminResult.success && configResult.success;
     const sveltiaCMSProperlyLoaded = adminResult.hasSveltia && !adminResult.hasNetlify;
-    const cdnWorking = sveltiaCDNResult.success;
     
     if (coreWorking && sveltiaCMSProperlyLoaded && cdnWorking) {
         console.log('🎉 Sveltia CMS implementation is SUCCESSFUL!');
@@ -137,7 +137,7 @@ async function runSveltiaCMSTest() {
         if (!adminResult.hasSveltia) console.log('  • Sveltia CMS script is not loaded');
         if (adminResult.hasNetlify) console.log('  • Old Netlify CMS script is still present');
         if (!configResult.success) console.log('  • Config file is not accessible');
-        if (!cdnWorking) console.log('  • Sveltia CMS CDN is not working');
+        if (!cdnWorking) console.log('  • Sveltia CMS CDN is not accessible');
     }
     
     console.log('\n🔗 Important Links:');
