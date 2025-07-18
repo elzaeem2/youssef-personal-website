@@ -1,19 +1,14 @@
-site_name: "موقع يوسف محمد الشخصي"
-site_description: "مطور ويب ومصمم واجهات مستخدم متخصص في إنشاء تجارب رقمية متميزة"
-personal_name: "يوسف محمد"
-job_title: "مطور ويب ومصمم واجهات مستخدم"
-profile_image: "images/photo_2025-07-18_00-04-58.jpg"
-email: "yousef.muhamed.eng22@stu.uoninevah.edu.iq"
-phone: "+964 770 123 4567"
-address: "الموصل، العراق - جامعة نينوى، كلية الهندسة"
-
-resume_pdf: "/files/youssef-mohammed-resume.pdf"
-
+site_name: يوسف محمد الجوباني
+site_description: مطور ويب ومصمم واجهات مستخدم متخصص في إنشاء تجارب رقمية متميزة
+personal_name: يوسف محمد
+job_title: مطور ويب ومصمم واجهات مستخدم
+profile_image: images/photo_2025-07-18_00-04-58.jpg
+email: yousef.muhamed.eng22@stu.uoninevah.edu.iq
+phone: +964 770 123 4567
+address: الموصل، العراق - جامعة نينوى، كلية الهندسة
 social_links:
-  facebook: "https://facebook.com/yousefmuhamed"
-  twitter: "https://twitter.com/yousefmuhamed"
-  linkedin: "https://linkedin.com/in/yousefmuhamed"
-  github: "https://github.com/yousefmuhamed"
-  instagram: "https://instagram.com/yousefmuhamed"
-  youtube: "https://youtube.com/@yousefmuhamed"
-  telegram: "https://t.me/yousefmuhamed"
+  facebook: https://facebook.com/yousefmuhamed
+  twitter: https://twitter.com/yousefmuhamed
+  linkedin: https://linkedin.com/in/yousefmuhamed
+  github: https://github.com/yousefmuhamed
+  instagram: https://instagram.com/yousefmuhamed
