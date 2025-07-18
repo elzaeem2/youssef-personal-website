@@ -341,3 +341,22 @@ collections:
               {label: "الشركة", name: "company", widget: "string", required: false},
               {label: "الموقع الجغرافي", name: "location", widget: "string"}
             ]}
+
+  # ===== اختبار CMS =====
+  - name: "test"
+    label: "🧪 اختبار النظام"
+    folder: "content/settings"
+    create: false
+    delete: false
+    slug: "test"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الوصف", name: "description", widget: "text" }
+      - label: "معلومات الاتصال"
+        name: "contact"
+        widget: "object"
+        fields:
+          - { label: "رقم الهاتف", name: "phone", widget: "string", hint: "غير هذا الرقم لاختبار CMS" }
+          - { label: "البريد الإلكتروني", name: "email", widget: "string" }
+      - { label: "آخر تحديث", name: "last_updated", widget: "datetime" }
+      - { label: "رقم الاختبار", name: "test_number", widget: "number", hint: "غير هذا الرقم لاختبار التحديث" }
