@@ -4,12 +4,32 @@ hero_description: "أقوم بتطوير مواقع ويب حديثة وتطبي
 projects_button_text: "أعمالي"
 contact_button_text: "تواصل معي"
 
+show_stats: true
 stats:
   - number: "25+"
     label: "مشروع مكتمل"
+    icon: "fas fa-project-diagram"
   - number: "15+"
     label: "عميل راضي"
+    icon: "fas fa-users"
   - number: "3+"
     label: "سنوات خبرة"
+    icon: "fas fa-calendar-alt"
   - number: "24/7"
     label: "دعم فني"
+    icon: "fas fa-headset"
+
+show_features: true
+features:
+  - title: "تصميم متجاوب"
+    description: "مواقع تعمل بشكل مثالي على جميع الأجهزة"
+    icon: "fas fa-mobile-alt"
+  - title: "أداء سريع"
+    description: "تحسين السرعة وتجربة المستخدم"
+    icon: "fas fa-tachometer-alt"
+  - title: "SEO محسن"
+    description: "تحسين محركات البحث لرؤية أفضل"
+    icon: "fas fa-search"
+  - title: "دعم مستمر"
+    description: "دعم فني وصيانة مستمرة"
+    icon: "fas fa-tools"

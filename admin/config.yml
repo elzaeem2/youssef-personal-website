@@ -17,110 +17,327 @@ publish_mode: editorial_workflow
 show_preview_links: true
 
 collections:
-  - name: "projects"
-    label: "المشاريع"
-    folder: "content/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "العنوان", name: "title", widget: "string"}
-      - {label: "الوصف", name: "description", widget: "text"}
-      - {label: "الصورة", name: "image", widget: "image", required: false}
-      - {label: "التاريخ", name: "date", widget: "datetime"}
-      - {label: "العميل", name: "client", widget: "string", required: false}
-      - {label: "التقنيات المستخدمة", name: "technologies", widget: "list", default: []}
-      - {label: "رابط المشروع", name: "project_url", widget: "string", required: false}
-      - {label: "رابط المعاينة", name: "preview_url", widget: "string", required: false}
-      - {label: "الفئة", name: "category", widget: "select", options: ["web", "mobile", "design", "ecommerce"]}
-      - {label: "مميز", name: "featured", widget: "boolean", default: false}
-      - {label: "المحتوى", name: "body", widget: "markdown"}
-
-  - name: "services"
-    label: "الخدمات"
-    folder: "content/services"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "العنوان", name: "title", widget: "string"}
-      - {label: "الوصف القصير", name: "description", widget: "text"}
-      - {label: "الأيقونة", name: "icon", widget: "string", hint: "اسم الأيقونة من Font Awesome (مثل: fas fa-code)"}
-      - {label: "السعر", name: "price", widget: "string"}
-      - {label: "الميزات", name: "features", widget: "list", default: []}
-      - {label: "مميزة", name: "featured", widget: "boolean", default: false}
-      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
-      - {label: "المحتوى التفصيلي", name: "body", widget: "markdown"}
-
-  - name: "products"
-    label: "المنتجات"
-    folder: "content/products"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "اسم المنتج", name: "title", widget: "string"}
-      - {label: "الوصف", name: "description", widget: "text"}
-      - {label: "صورة المنتج", name: "image", widget: "image", required: false}
-      - {label: "السعر الحالي", name: "current_price", widget: "string"}
-      - {label: "السعر القديم", name: "old_price", widget: "string", required: false}
-      - {label: "الميزات", name: "features", widget: "list", default: []}
-      - {label: "التقنيات", name: "technologies", widget: "list", default: []}
-      - {label: "رابط المعاينة", name: "preview_url", widget: "string", required: false}
-      - {label: "رابط الشراء", name: "purchase_url", widget: "string", required: false}
-      - {label: "شارة المنتج", name: "badge", widget: "select", options: ["جديد", "الأكثر مبيعاً", ""], required: false}
-      - {label: "متوفر", name: "available", widget: "boolean", default: true}
-      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
-      - {label: "المحتوى التفصيلي", name: "body", widget: "markdown"}
-
+  # ===== إعدادات الموقع الأساسية =====
   - name: "settings"
-    label: "الإعدادات"
+    label: "⚙️ إعدادات الموقع"
     files:
-      - label: "معلومات الموقع"
+      - label: "معلومات الموقع الأساسية"
         name: "site_info"
         file: "content/settings/site_info.yml"
         fields:
-          - {label: "اسم الموقع", name: "site_name", widget: "string"}
-          - {label: "الوصف", name: "site_description", widget: "text"}
+          - {label: "اسم الموقع", name: "site_name", widget: "string", hint: "اسم الموقع الذي يظهر في المتصفح"}
+          - {label: "وصف الموقع", name: "site_description", widget: "text", hint: "وصف مختصر للموقع لمحركات البحث"}
           - {label: "الاسم الشخصي", name: "personal_name", widget: "string"}
-          - {label: "المسمى الوظيفي", name: "job_title", widget: "string"}
-          - {label: "الصورة الشخصية", name: "profile_image", widget: "image", required: false, hint: "الصورة ستظهر في الصفحة الرئيسية وصفحة السيرة الذاتية"}
+          - {label: "المسمى الوظيفي", name: "job_title", widget: "string", hint: "مثل: مطور ويب، مصمم واجهات"}
+          - {label: "الصورة الشخصية", name: "profile_image", widget: "image", required: false, hint: "الصورة ستظهر في جميع أنحاء الموقع"}
           - {label: "البريد الإلكتروني", name: "email", widget: "string"}
           - {label: "رقم الهاتف", name: "phone", widget: "string"}
           - {label: "العنوان", name: "address", widget: "text"}
+          - {label: "السيرة الذاتية (PDF)", name: "resume_pdf", widget: "file", required: false, hint: "ملف PDF للسيرة الذاتية"}
           - {label: "روابط التواصل الاجتماعي", name: "social_links", widget: "object", fields: [
               {label: "فيسبوك", name: "facebook", widget: "string", required: false},
               {label: "تويتر", name: "twitter", widget: "string", required: false},
               {label: "لينكد إن", name: "linkedin", widget: "string", required: false},
               {label: "جيت هاب", name: "github", widget: "string", required: false},
-              {label: "إنستغرام", name: "instagram", widget: "string", required: false}
+              {label: "إنستغرام", name: "instagram", widget: "string", required: false},
+              {label: "يوتيوب", name: "youtube", widget: "string", required: false},
+              {label: "تيليجرام", name: "telegram", widget: "string", required: false}
             ]}
 
-      - label: "صفحة من أنا"
-        name: "about_page"
-        file: "content/settings/about.yml"
-        fields:
-          - {label: "العنوان الرئيسي", name: "main_title", widget: "string"}
-          - {label: "العنوان الفرعي", name: "subtitle", widget: "string"}
-          - {label: "النص التعريفي", name: "intro_text", widget: "markdown"}
-          - {label: "المعلومات الشخصية", name: "personal_info", widget: "object", fields: [
-              {label: "العمر", name: "age", widget: "string"},
-              {label: "الموقع", name: "location", widget: "string"},
-              {label: "سنوات الخبرة", name: "experience_years", widget: "string"}
-            ]}
-          - {label: "المهارات", name: "skills", widget: "list", fields: [
-              {label: "اسم المهارة", name: "name", widget: "string"},
-              {label: "النسبة المئوية", name: "percentage", widget: "number", min: 0, max: 100},
-              {label: "الفئة", name: "category", widget: "string"}
-            ]}
-
-      - label: "الصفحة الرئيسية"
+      - label: "إعدادات الصفحة الرئيسية"
         name: "home_page"
         file: "content/settings/home.yml"
         fields:
-          - {label: "عنوان الهيرو", name: "hero_title", widget: "string"}
-          - {label: "العنوان الفرعي", name: "hero_subtitle", widget: "string"}
-          - {label: "وصف الهيرو", name: "hero_description", widget: "text"}
-          - {label: "نص زر الأعمال", name: "projects_button_text", widget: "string"}
-          - {label: "نص زر التواصل", name: "contact_button_text", widget: "string"}
+          - {label: "عنوان الهيرو الرئيسي", name: "hero_title", widget: "string", hint: "العنوان الكبير في أعلى الصفحة"}
+          - {label: "العنوان الفرعي", name: "hero_subtitle", widget: "string", hint: "النص تحت العنوان الرئيسي"}
+          - {label: "وصف الهيرو", name: "hero_description", widget: "text", hint: "وصف مختصر عنك وعن عملك"}
+          - {label: "نص زر الأعمال", name: "projects_button_text", widget: "string", default: "شاهد أعمالي"}
+          - {label: "نص زر التواصل", name: "contact_button_text", widget: "string", default: "تواصل معي"}
+          - {label: "عرض قسم الإحصائيات", name: "show_stats", widget: "boolean", default: true}
           - {label: "الإحصائيات", name: "stats", widget: "list", fields: [
-              {label: "الرقم", name: "number", widget: "string"},
-              {label: "التسمية", name: "label", widget: "string"}
+              {label: "الرقم", name: "number", widget: "string", hint: "مثل: 50+"},
+              {label: "التسمية", name: "label", widget: "string", hint: "مثل: مشروع مكتمل"},
+              {label: "الأيقونة", name: "icon", widget: "string", required: false, hint: "اسم الأيقونة من Font Awesome"}
+            ]}
+          - {label: "عرض قسم الميزات", name: "show_features", widget: "boolean", default: true}
+          - {label: "الميزات", name: "features", widget: "list", fields: [
+              {label: "العنوان", name: "title", widget: "string"},
+              {label: "الوصف", name: "description", widget: "text"},
+              {label: "الأيقونة", name: "icon", widget: "string", hint: "اسم الأيقونة من Font Awesome"}
+            ]}
+
+  # ===== التعليم والشهادات =====
+  - name: "education"
+    label: "🎓 التعليم والشهادات"
+    folder: "content/education"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "اسم المؤسسة التعليمية", name: "institution", widget: "string"}
+      - {label: "الدرجة العلمية", name: "degree", widget: "string", hint: "مثل: بكالوريوس، ماجستير، دكتوراه"}
+      - {label: "التخصص", name: "field_of_study", widget: "string", hint: "مثل: علوم الحاسوب، هندسة البرمجيات"}
+      - {label: "سنة البداية", name: "start_year", widget: "string"}
+      - {label: "سنة التخرج", name: "end_year", widget: "string", required: false, hint: "اتركه فارغاً إذا كان مستمراً"}
+      - {label: "المعدل", name: "gpa", widget: "string", required: false, hint: "مثل: 3.8/4.0 أو امتياز"}
+      - {label: "الموقع", name: "location", widget: "string", hint: "المدينة، البلد"}
+      - {label: "الوصف", name: "description", widget: "text", required: false, hint: "وصف مختصر عن الدراسة أو الإنجازات"}
+      - {label: "الأنشطة والإنجازات", name: "activities", widget: "list", required: false, hint: "الأنشطة الطلابية أو الإنجازات الأكاديمية"}
+      - {label: "مستمر حالياً", name: "current", widget: "boolean", default: false}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+
+  # ===== الخبرات العملية =====
+  - name: "experience"
+    label: "💼 الخبرات العملية"
+    folder: "content/experience"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "المسمى الوظيفي", name: "position", widget: "string"}
+      - {label: "اسم الشركة", name: "company", widget: "string"}
+      - {label: "موقع الشركة", name: "company_url", widget: "string", required: false, hint: "رابط موقع الشركة"}
+      - {label: "نوع العمل", name: "employment_type", widget: "select", options: ["دوام كامل", "دوام جزئي", "عمل حر", "تدريب", "تطوع"]}
+      - {label: "تاريخ البداية", name: "start_date", widget: "string", hint: "مثل: يناير 2022"}
+      - {label: "تاريخ الانتهاء", name: "end_date", widget: "string", required: false, hint: "اتركه فارغاً إذا كان مستمراً"}
+      - {label: "الموقع", name: "location", widget: "string", hint: "المدينة، البلد أو عن بُعد"}
+      - {label: "وصف المهام", name: "description", widget: "markdown", hint: "وصف تفصيلي للمهام والمسؤوليات"}
+      - {label: "الإنجازات الرئيسية", name: "achievements", widget: "list", required: false, hint: "قائمة بأهم الإنجازات في هذا المنصب"}
+      - {label: "التقنيات المستخدمة", name: "technologies", widget: "list", required: false, hint: "التقنيات والأدوات المستخدمة"}
+      - {label: "أعمل حالياً", name: "current", widget: "boolean", default: false}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+
+  # ===== الشهادات والدورات =====
+  - name: "certifications"
+    label: "🏆 الشهادات والدورات"
+    folder: "content/certifications"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "اسم الشهادة", name: "title", widget: "string"}
+      - {label: "الجهة المانحة", name: "issuer", widget: "string", hint: "مثل: Google، Microsoft، Coursera"}
+      - {label: "تاريخ الحصول", name: "date", widget: "string", hint: "مثل: يناير 2023"}
+      - {label: "تاريخ الانتهاء", name: "expiry_date", widget: "string", required: false, hint: "إذا كانت الشهادة لها تاريخ انتهاء"}
+      - {label: "رقم الشهادة", name: "credential_id", widget: "string", required: false}
+      - {label: "رابط التحقق", name: "verification_url", widget: "string", required: false, hint: "رابط للتحقق من صحة الشهادة"}
+      - {label: "الوصف", name: "description", widget: "text", required: false, hint: "وصف مختصر عن محتوى الشهادة"}
+      - {label: "المهارات المكتسبة", name: "skills", widget: "list", required: false, hint: "المهارات التي تم تعلمها"}
+      - {label: "صورة الشهادة", name: "image", widget: "image", required: false}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+
+  # ===== المشاريع =====
+  - name: "projects"
+    label: "💻 المشاريع"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "اسم المشروع", name: "title", widget: "string"}
+      - {label: "الوصف المختصر", name: "description", widget: "text", hint: "وصف مختصر يظهر في قائمة المشاريع"}
+      - {label: "صورة المشروع", name: "image", widget: "image", required: false, hint: "صورة معاينة للمشروع"}
+      - {label: "معرض الصور", name: "gallery", widget: "list", required: false, field: {label: "صورة", name: "image", widget: "image"}}
+      - {label: "تاريخ المشروع", name: "date", widget: "datetime"}
+      - {label: "العميل", name: "client", widget: "string", required: false}
+      - {label: "مدة المشروع", name: "duration", widget: "string", required: false, hint: "مثل: 3 أشهر"}
+      - {label: "التقنيات المستخدمة", name: "technologies", widget: "list", default: []}
+      - {label: "رابط المشروع المباشر", name: "project_url", widget: "string", required: false}
+      - {label: "رابط المعاينة", name: "preview_url", widget: "string", required: false}
+      - {label: "رابط الكود المصدري", name: "github_url", widget: "string", required: false}
+      - {label: "فئة المشروع", name: "category", widget: "select", options: ["مواقع ويب", "تطبيقات موبايل", "تصميم واجهات", "متاجر إلكترونية", "أنظمة إدارة", "أخرى"]}
+      - {label: "حالة المشروع", name: "status", widget: "select", options: ["مكتمل", "قيد التطوير", "متوقف"], default: "مكتمل"}
+      - {label: "مشروع مميز", name: "featured", widget: "boolean", default: false, hint: "سيظهر في المقدمة"}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+      - {label: "التفاصيل الكاملة", name: "body", widget: "markdown", hint: "وصف تفصيلي للمشروع والتحديات والحلول"}
+
+  # ===== الخدمات =====
+  - name: "services"
+    label: "🛠️ الخدمات"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "اسم الخدمة", name: "title", widget: "string"}
+      - {label: "الوصف المختصر", name: "description", widget: "text", hint: "وصف مختصر يظهر في بطاقة الخدمة"}
+      - {label: "الأيقونة", name: "icon", widget: "string", hint: "اسم الأيقونة من Font Awesome (مثل: fas fa-code)"}
+      - {label: "السعر الأساسي", name: "price", widget: "string", hint: "مثل: 500$ أو حسب المشروع"}
+      - {label: "العملة", name: "currency", widget: "select", options: ["USD", "EUR", "IQD"], default: "USD"}
+      - {label: "نوع التسعير", name: "pricing_type", widget: "select", options: ["سعر ثابت", "حسب الساعة", "حسب المشروع"], default: "حسب المشروع"}
+      - {label: "الميزات المتضمنة", name: "features", widget: "list", hint: "قائمة بالميزات المتضمنة في الخدمة"}
+      - {label: "الميزات الإضافية", name: "additional_features", widget: "list", required: false, hint: "ميزات إضافية بتكلفة إضافية"}
+      - {label: "مدة التسليم", name: "delivery_time", widget: "string", required: false, hint: "مثل: 7-14 يوم عمل"}
+      - {label: "عدد المراجعات", name: "revisions", widget: "string", required: false, hint: "مثل: 3 مراجعات مجانية"}
+      - {label: "خدمة مميزة", name: "featured", widget: "boolean", default: false, hint: "ستظهر في المقدمة"}
+      - {label: "متاحة حالياً", name: "available", widget: "boolean", default: true}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+      - {label: "التفاصيل الكاملة", name: "body", widget: "markdown", hint: "وصف تفصيلي للخدمة وما تتضمنه"}
+
+  # ===== المنتجات الرقمية =====
+  - name: "products"
+    label: "🛒 المنتجات الرقمية"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "اسم المنتج", name: "title", widget: "string"}
+      - {label: "الوصف المختصر", name: "description", widget: "text", hint: "وصف مختصر يظهر في بطاقة المنتج"}
+      - {label: "صورة المنتج الرئيسية", name: "image", widget: "image", required: false}
+      - {label: "معرض صور المنتج", name: "gallery", widget: "list", required: false, field: {label: "صورة", name: "image", widget: "image"}}
+      - {label: "فئة المنتج", name: "category", widget: "select", options: ["قوالب ويب", "تطبيقات", "أدوات", "كورسات", "كتب إلكترونية", "أخرى"]}
+      - {label: "السعر الحالي", name: "current_price", widget: "string"}
+      - {label: "السعر القديم", name: "old_price", widget: "string", required: false, hint: "للعروض والخصومات"}
+      - {label: "العملة", name: "currency", widget: "select", options: ["USD", "EUR", "IQD"], default: "USD"}
+      - {label: "نوع الترخيص", name: "license_type", widget: "select", options: ["استخدام شخصي", "استخدام تجاري", "مفتوح المصدر"], default: "استخدام شخصي"}
+      - {label: "الميزات الرئيسية", name: "features", widget: "list", hint: "قائمة بأهم ميزات المنتج"}
+      - {label: "التقنيات المستخدمة", name: "technologies", widget: "list", required: false}
+      - {label: "متطلبات النظام", name: "requirements", widget: "list", required: false, hint: "المتطلبات التقنية لاستخدام المنتج"}
+      - {label: "رابط المعاينة المباشرة", name: "preview_url", widget: "string", required: false}
+      - {label: "رابط التحميل/الشراء", name: "purchase_url", widget: "string", required: false}
+      - {label: "رابط الوثائق", name: "documentation_url", widget: "string", required: false}
+      - {label: "شارة المنتج", name: "badge", widget: "select", options: ["", "جديد", "الأكثر مبيعاً", "مخفض", "مجاني"], required: false}
+      - {label: "متوفر للشراء", name: "available", widget: "boolean", default: true}
+      - {label: "عدد التحميلات", name: "downloads", widget: "string", required: false, hint: "مثل: 1000+"}
+      - {label: "التقييم", name: "rating", widget: "number", required: false, min: 1, max: 5, step: 0.1}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+      - {label: "الوصف التفصيلي", name: "body", widget: "markdown", hint: "وصف شامل للمنتج وطريقة الاستخدام"}
+
+  # ===== المهارات التفصيلية =====
+  - name: "skills"
+    label: "🎯 المهارات التفصيلية"
+    folder: "content/skills"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "اسم المهارة", name: "title", widget: "string"}
+      - {label: "فئة المهارة", name: "category", widget: "select", options: ["تطوير الواجهات الأمامية", "تطوير الواجهات الخلفية", "تصميم واجهات المستخدم", "قواعد البيانات", "أدوات التطوير", "إدارة المشاريع", "مهارات شخصية", "أخرى"]}
+      - {label: "مستوى الإتقان", name: "proficiency", widget: "select", options: ["مبتدئ", "متوسط", "متقدم", "خبير"]}
+      - {label: "النسبة المئوية", name: "percentage", widget: "number", min: 0, max: 100, hint: "من 0 إلى 100"}
+      - {label: "سنوات الخبرة", name: "years_experience", widget: "string", required: false, hint: "مثل: 3+ سنوات"}
+      - {label: "الوصف", name: "description", widget: "text", required: false, hint: "وصف مختصر عن خبرتك في هذه المهارة"}
+      - {label: "المشاريع المرتبطة", name: "related_projects", widget: "list", required: false, hint: "أسماء المشاريع التي استخدمت فيها هذه المهارة"}
+      - {label: "الشهادات المرتبطة", name: "related_certifications", widget: "list", required: false, hint: "الشهادات المرتبطة بهذه المهارة"}
+      - {label: "أيقونة المهارة", name: "icon", widget: "string", required: false, hint: "اسم الأيقونة من Font Awesome أو DevIcons"}
+      - {label: "لون المهارة", name: "color", widget: "string", required: false, hint: "كود اللون الهيكس (مثل: #3498db)"}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+
+  # ===== شهادات العملاء والتوصيات =====
+  - name: "testimonials"
+    label: "💬 شهادات العملاء"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "اسم العميل", name: "client_name", widget: "string"}
+      - {label: "المسمى الوظيفي", name: "client_position", widget: "string", hint: "مثل: مدير التسويق"}
+      - {label: "اسم الشركة", name: "company", widget: "string"}
+      - {label: "صورة العميل", name: "client_image", widget: "image", required: false}
+      - {label: "نص الشهادة", name: "testimonial", widget: "text", hint: "نص الشهادة أو التوصية"}
+      - {label: "التقييم", name: "rating", widget: "number", min: 1, max: 5, default: 5, hint: "من 1 إلى 5 نجوم"}
+      - {label: "المشروع المرتبط", name: "related_project", widget: "string", required: false, hint: "اسم المشروع الذي تم العمل عليه"}
+      - {label: "تاريخ الشهادة", name: "date", widget: "string", hint: "مثل: يناير 2023"}
+      - {label: "رابط ملف العميل", name: "client_profile_url", widget: "string", required: false, hint: "رابط LinkedIn أو موقع الشركة"}
+      - {label: "مميزة", name: "featured", widget: "boolean", default: false, hint: "ستظهر في المقدمة"}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+
+  # ===== المدونة والمقالات =====
+  - name: "blog"
+    label: "📝 المدونة والمقالات"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "عنوان المقال", name: "title", widget: "string"}
+      - {label: "الوصف المختصر", name: "description", widget: "text", hint: "وصف مختصر يظهر في قائمة المقالات"}
+      - {label: "صورة المقال", name: "featured_image", widget: "image", required: false}
+      - {label: "تاريخ النشر", name: "date", widget: "datetime"}
+      - {label: "الكاتب", name: "author", widget: "string", default: "يوسف محمد"}
+      - {label: "فئة المقال", name: "category", widget: "select", options: ["تطوير الويب", "تصميم واجهات", "تقنية", "نصائح", "دروس", "أخبار", "شخصي"]}
+      - {label: "الكلمات المفتاحية", name: "tags", widget: "list", hint: "كلمات مفتاحية لتحسين محركات البحث"}
+      - {label: "وقت القراءة المتوقع", name: "reading_time", widget: "string", required: false, hint: "مثل: 5 دقائق"}
+      - {label: "مقال مميز", name: "featured", widget: "boolean", default: false}
+      - {label: "منشور", name: "published", widget: "boolean", default: true}
+      - {label: "محتوى المقال", name: "body", widget: "markdown"}
+
+  # ===== الأسئلة الشائعة =====
+  - name: "faq"
+    label: "❓ الأسئلة الشائعة"
+    folder: "content/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "السؤال", name: "question", widget: "string"}
+      - {label: "الإجابة", name: "answer", widget: "markdown"}
+      - {label: "الفئة", name: "category", widget: "select", options: ["عام", "الخدمات", "الأسعار", "التقنية", "التسليم", "الدعم"]}
+      - {label: "ترتيب العرض", name: "order", widget: "number", default: 1}
+
+  # ===== إعدادات صفحة السيرة الذاتية المحسنة =====
+  - name: "about_settings"
+    label: "👤 إعدادات صفحة السيرة الذاتية"
+    files:
+      - label: "محتوى صفحة السيرة الذاتية"
+        name: "about_content"
+        file: "content/settings/about.yml"
+        fields:
+          - {label: "العنوان الرئيسي", name: "main_title", widget: "string", default: "السيرة الذاتية"}
+          - {label: "العنوان الفرعي", name: "subtitle", widget: "string"}
+          - {label: "النص التعريفي", name: "intro_text", widget: "markdown", hint: "نص تعريفي عنك وعن خبراتك"}
+          - {label: "عرض قسم المعلومات الشخصية", name: "show_personal_info", widget: "boolean", default: true}
+          - {label: "المعلومات الشخصية", name: "personal_info", widget: "object", fields: [
+              {label: "العمر", name: "age", widget: "string"},
+              {label: "الموقع", name: "location", widget: "string"},
+              {label: "سنوات الخبرة", name: "experience_years", widget: "string"},
+              {label: "الحالة الاجتماعية", name: "marital_status", widget: "string", required: false},
+              {label: "الجنسية", name: "nationality", widget: "string", required: false},
+              {label: "اللغات", name: "languages", widget: "list", required: false}
+            ]}
+          - {label: "عرض قسم المهارات", name: "show_skills", widget: "boolean", default: true}
+          - {label: "عرض قسم الاهتمامات", name: "show_interests", widget: "boolean", default: true}
+          - {label: "الاهتمامات والهوايات", name: "interests", widget: "list", required: false, hint: "قائمة بالاهتمامات والهوايات"}
+          - {label: "الأهداف المهنية", name: "career_goals", widget: "text", required: false, hint: "أهدافك المهنية المستقبلية"}
+
+  # ===== إعدادات صفحة التواصل =====
+  - name: "contact_settings"
+    label: "📞 إعدادات صفحة التواصل"
+    files:
+      - label: "محتوى صفحة التواصل"
+        name: "contact_content"
+        file: "content/settings/contact.yml"
+        fields:
+          - {label: "العنوان الرئيسي", name: "main_title", widget: "string", default: "تواصل معي"}
+          - {label: "العنوان الفرعي", name: "subtitle", widget: "string"}
+          - {label: "النص التعريفي", name: "intro_text", widget: "text", hint: "نص ترحيبي في صفحة التواصل"}
+          - {label: "عرض النموذج", name: "show_contact_form", widget: "boolean", default: true}
+          - {label: "عنوان النموذج", name: "form_title", widget: "string", default: "أرسل رسالة"}
+          - {label: "نص زر الإرسال", name: "submit_button_text", widget: "string", default: "إرسال الرسالة"}
+          - {label: "رسالة الشكر", name: "thank_you_message", widget: "text", default: "شكراً لك! سأتواصل معك قريباً."}
+          - {label: "عرض معلومات التواصل", name: "show_contact_info", widget: "boolean", default: true}
+          - {label: "عرض الخريطة", name: "show_map", widget: "boolean", default: false}
+          - {label: "إحداثيات الخريطة", name: "map_coordinates", widget: "object", required: false, fields: [
+              {label: "خط العرض", name: "latitude", widget: "string"},
+              {label: "خط الطول", name: "longitude", widget: "string"}
+            ]}
+          - {label: "ساعات العمل", name: "working_hours", widget: "object", required: false, fields: [
+              {label: "من يوم", name: "from_day", widget: "string", default: "الأحد"},
+              {label: "إلى يوم", name: "to_day", widget: "string", default: "الخميس"},
+              {label: "من ساعة", name: "from_time", widget: "string", default: "9:00 ص"},
+              {label: "إلى ساعة", name: "to_time", widget: "string", default: "5:00 م"}
+            ]}
+
+  # ===== إعدادات SEO والميتا =====
+  - name: "seo_settings"
+    label: "🔍 إعدادات SEO والميتا"
+    files:
+      - label: "إعدادات تحسين محركات البحث"
+        name: "seo_config"
+        file: "content/settings/seo.yml"
+        fields:
+          - {label: "الكلمات المفتاحية الرئيسية", name: "main_keywords", widget: "list", hint: "الكلمات المفتاحية الأساسية للموقع"}
+          - {label: "وصف الموقع لمحركات البحث", name: "meta_description", widget: "text", hint: "وصف يظهر في نتائج البحث"}
+          - {label: "صورة المشاركة الافتراضية", name: "default_og_image", widget: "image", required: false, hint: "صورة تظهر عند مشاركة الموقع"}
+          - {label: "Google Analytics ID", name: "google_analytics_id", widget: "string", required: false}
+          - {label: "Google Search Console", name: "google_site_verification", widget: "string", required: false}
+          - {label: "Facebook App ID", name: "facebook_app_id", widget: "string", required: false}
+          - {label: "Twitter Username", name: "twitter_username", widget: "string", required: false}
+          - {label: "Schema.org Person", name: "schema_person", widget: "object", required: false, fields: [
+              {label: "الاسم الكامل", name: "name", widget: "string"},
+              {label: "المسمى الوظيفي", name: "job_title", widget: "string"},
+              {label: "الشركة", name: "company", widget: "string", required: false},
+              {label: "الموقع الجغرافي", name: "location", widget: "string"}
             ]}
