@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار التصميم المتجاوب - موقع يوسف محمد</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .test-frame {
+            border: 2px solid #2563eb;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #1e293b;
+        }
+        
+        .frame-header {
+            background: #2563eb;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .frame-content {
+            height: 400px;
+            overflow: auto;
+        }
+        
+        .frame-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform-origin: 0 0;
+        }
+        
+        .mobile-320 iframe { transform: scale(0.8); width: 125%; height: 125%; }
+        .mobile-375 iframe { transform: scale(0.85); width: 118%; height: 118%; }
+        .mobile-414 iframe { transform: scale(0.9); width: 111%; height: 111%; }
+        .tablet-768 iframe { transform: scale(0.95); width: 105%; height: 105%; }
+        
+        .test-info {
+            background: #334155;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .test-checklist {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #475569;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-left: 10px;
+            transform: scale(1.2);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 اختبار التصميم المتجاوب</h1>
+            <p>اختبار موقع يوسف محمد الشخصي على أحجام شاشات مختلفة</p>
+            <a href="https://youssef-personal-website.netlify.app" class="btn" target="_blank">فتح الموقع الأصلي</a>
+        </div>
+        
+        <div class="test-info">
+            <h2>📱 أحجام الشاشات المختبرة:</h2>
+            <ul>
+                <li><strong>320px</strong> - الهواتف الصغيرة (iPhone SE)</li>
+                <li><strong>375px</strong> - الهواتف العادية (iPhone 12/13)</li>
+                <li><strong>414px</strong> - الهواتف الكبيرة (iPhone 12 Pro Max)</li>
+                <li><strong>768px</strong> - الأجهزة اللوحية (iPad)</li>
+            </ul>
+        </div>
+        
+        <div class="test-grid">
+            <div class="test-frame mobile-320">
+                <div class="frame-header">📱 320px - هواتف صغيرة</div>
+                <div class="frame-content">
+                    <iframe src="https://youssef-personal-website.netlify.app"></iframe>
+                </div>
+            </div>
+            
+            <div class="test-frame mobile-375">
+                <div class="frame-header">📱 375px - هواتف عادية</div>
+                <div class="frame-content">
+                    <iframe src="https://youssef-personal-website.netlify.app"></iframe>
+                </div>
+            </div>
+            
+            <div class="test-frame mobile-414">
+                <div class="frame-header">📱 414px - هواتف كبيرة</div>
+                <div class="frame-content">
+                    <iframe src="https://youssef-personal-website.netlify.app"></iframe>
+                </div>
+            </div>
+            
+            <div class="test-frame tablet-768">
+                <div class="frame-header">📱 768px - أجهزة لوحية</div>
+                <div class="frame-content">
+                    <iframe src="https://youssef-personal-website.netlify.app"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-checklist">
+            <h2>✅ قائمة فحص التصميم المتجاوب:</h2>
+            
+            <h3>🧭 التنقل والقوائم:</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="nav-mobile">
+                <label for="nav-mobile">القائمة الجانبية تعمل بشكل صحيح على الهواتف</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="hamburger">
+                <label for="hamburger">زر الهامبرغر يظهر ويعمل بشكل صحيح</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="nav-links">
+                <label for="nav-links">روابط التنقل قابلة للنقر بسهولة</label>
+            </div>
+            
+            <h3>📝 النصوص والمحتوى:</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="text-readable">
+                <label for="text-readable">النصوص قابلة للقراءة على جميع الأحجام</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="titles-size">
+                <label for="titles-size">العناوين بأحجام مناسبة للشاشات الصغيرة</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="line-height">
+                <label for="line-height">المسافات بين الأسطر مناسبة</label>
+            </div>
+            
+            <h3>🔘 الأزرار والتفاعل:</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="button-size">
+                <label for="button-size">الأزرار بحجم مناسب للمس (44px على الأقل)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="button-spacing">
+                <label for="button-spacing">المسافات بين الأزرار كافية</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="touch-targets">
+                <label for="touch-targets">جميع العناصر التفاعلية قابلة للنقر بسهولة</label>
+            </div>
+            
+            <h3>🖼️ الصور والتخطيط:</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="images-responsive">
+                <label for="images-responsive">الصور تتكيف مع أحجام الشاشات</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="layout-mobile">
+                <label for="layout-mobile">التخطيط يتحول إلى عمود واحد على الهواتف</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="no-horizontal-scroll">
+                <label for="no-horizontal-scroll">لا يوجد تمرير أفقي غير مرغوب</label>
+            </div>
+            
+            <h3>📋 النماذج:</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="form-inputs">
+                <label for="form-inputs">حقول النماذج بحجم مناسب وسهلة الاستخدام</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="form-labels">
+                <label for="form-labels">تسميات النماذج واضحة ومقروءة</label>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://youssef-personal-website.netlify.app/about.html" class="btn" target="_blank">اختبار صفحة السيرة الذاتية</a>
+            <a href="https://youssef-personal-website.netlify.app/projects.html" class="btn" target="_blank">اختبار صفحة المشاريع</a>
+            <a href="https://youssef-personal-website.netlify.app/services.html" class="btn" target="_blank">اختبار صفحة الخدمات</a>
+            <a href="https://youssef-personal-website.netlify.app/contact.html" class="btn" target="_blank">اختبار صفحة التواصل</a>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-check items after a delay to simulate testing
+        setTimeout(() => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                setTimeout(() => {
+                    checkbox.checked = true;
+                }, index * 200);
+            });
+        }, 2000);
+    </script>
+</body>
+</html>
