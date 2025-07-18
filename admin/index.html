@@ -3,104 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>لوحة تحكم المحتوى</title>
+  <title>Content Management</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <!-- Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  
-  <script>
-    // Configure Netlify CMS for Arabic language
-    CMS.init({
-      config: {
-        locale: 'ar',
-        load_config_file: '/admin/config.yml'
-      }
-    });
-
-    // Custom preview templates (optional)
-    CMS.registerPreviewTemplate('projects', ({ entry, widgetFor, widgetsFor }) => {
-      const title = entry.getIn(['data', 'title']);
-      const description = entry.getIn(['data', 'description']);
-      const technologies = entry.getIn(['data', 'technologies']);
-      
-      return `
-        <div style="padding: 20px; font-family: Arial, sans-serif; direction: rtl;">
-          <h2 style="color: #2563eb; margin-bottom: 10px;">${title}</h2>
-          <p style="color: #64748b; margin-bottom: 15px;">${description}</p>
-          ${technologies ? `
-            <div style="margin-bottom: 15px;">
-              <strong>التقنيات المستخدمة:</strong>
-              <div style="margin-top: 5px;">
-                ${technologies.map(tech => `<span style="background: #2563eb; color: white; padding: 2px 8px; border-radius: 4px; margin: 2px; display: inline-block; font-size: 12px;">${tech}</span>`).join('')}
-              </div>
-            </div>
-          ` : ''}
-          <div style="border-top: 1px solid #e2e8f0; padding-top: 15px;">
-            ${widgetFor('body')}
-          </div>
-        </div>
-      `;
-    });
-
-    CMS.registerPreviewTemplate('services', ({ entry, widgetFor }) => {
-      const title = entry.getIn(['data', 'title']);
-      const description = entry.getIn(['data', 'description']);
-      const price = entry.getIn(['data', 'price']);
-      const features = entry.getIn(['data', 'features']);
-      
-      return `
-        <div style="padding: 20px; font-family: Arial, sans-serif; direction: rtl; border: 1px solid #e2e8f0; border-radius: 8px;">
-          <h3 style="color: #2563eb; margin-bottom: 10px;">${title}</h3>
-          <p style="color: #64748b; margin-bottom: 15px;">${description}</p>
-          ${features ? `
-            <ul style="margin-bottom: 15px; padding-right: 20px;">
-              ${features.map(feature => `<li style="margin-bottom: 5px; color: #475569;">${feature}</li>`).join('')}
-            </ul>
-          ` : ''}
-          <div style="font-size: 18px; font-weight: bold; color: #2563eb; margin-bottom: 15px;">
-            السعر: ${price}
-          </div>
-          <div style="border-top: 1px solid #e2e8f0; padding-top: 15px;">
-            ${widgetFor('body')}
-          </div>
-        </div>
-      `;
-    });
-
-    CMS.registerPreviewTemplate('products', ({ entry, widgetFor }) => {
-      const title = entry.getIn(['data', 'title']);
-      const description = entry.getIn(['data', 'description']);
-      const currentPrice = entry.getIn(['data', 'current_price']);
-      const oldPrice = entry.getIn(['data', 'old_price']);
-      const features = entry.getIn(['data', 'features']);
-      const badge = entry.getIn(['data', 'badge']);
-      
-      return `
-        <div style="padding: 20px; font-family: Arial, sans-serif; direction: rtl; border: 1px solid #e2e8f0; border-radius: 8px; position: relative;">
-          ${badge ? `<span style="position: absolute; top: 10px; left: 10px; background: #10b981; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">${badge}</span>` : ''}
-          <h3 style="color: #2563eb; margin-bottom: 10px;">${title}</h3>
-          <p style="color: #64748b; margin-bottom: 15px;">${description}</p>
-          ${features ? `
-            <div style="margin-bottom: 15px;">
-              ${features.map(feature => `<span style="background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; margin: 2px; display: inline-block; font-size: 12px;">${feature}</span>`).join('')}
-            </div>
-          ` : ''}
-          <div style="margin-bottom: 15px;">
-            ${oldPrice ? `<span style="text-decoration: line-through; color: #94a3b8; margin-left: 10px;">${oldPrice}</span>` : ''}
-            <span style="font-size: 18px; font-weight: bold; color: #2563eb;">${currentPrice}</span>
-          </div>
-          <div style="border-top: 1px solid #e2e8f0; padding-top: 15px;">
-            ${widgetFor('body')}
-          </div>
-        </div>
-      `;
-    });
-  </script>
 
   <script>
-    // Netlify Identity Widget
+    // Initialize Netlify Identity
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
